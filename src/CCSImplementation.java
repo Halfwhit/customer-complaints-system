@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class CCSImplementation implements CCS {
@@ -54,7 +55,12 @@ public class CCSImplementation implements CCS {
     }
 
     public void archiveSubmissions() {
-        
+
+        List<Submission> submissions = getSubmissionList();
+
+        for (Submission submission : submissions)
+            if (submission.isAssigned())
+                this.submissionHashMap.remove(submission.getSubmissionId());
     }
 
     public void assignResolver(int complaintId, int staffId, Date deadline) {
@@ -87,7 +93,7 @@ public class CCSImplementation implements CCS {
 
     public int getNewStaffId() {
 
-        return NEXT_CUSTOMER_ID++;
+        return NEXT_STAFF_ID++;
     }
 
     public int getNewSubmissionId() {

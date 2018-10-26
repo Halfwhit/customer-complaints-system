@@ -5,6 +5,7 @@ public class Complaint extends Submission {
     private boolean assigned;
     private int assignedStaff;
     private Date deadline;
+    private String type = "Generic";
 
     private ArrayList<Action> actions = new ArrayList<Action>();
     private boolean resolved;
@@ -30,6 +31,21 @@ public class Complaint extends Submission {
 
     public boolean isAssigned() {
         return assigned;
+    }
+
+    @Override
+    public int getStaffId() {
+        return 0;
+    }
+
+    @Override
+    public String getLiftName() {
+        return null;
+    }
+
+    @Override
+    public int getLiftFloor() {
+        return 0;
     }
 
     public ArrayList<Action> getActions() {

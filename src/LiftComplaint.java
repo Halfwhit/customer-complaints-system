@@ -1,7 +1,8 @@
 public class LiftComplaint extends Complaint {
 
-    String liftName;
-    int liftFloor;
+    private String liftName;
+    private int liftFloor;
+    String type = "Lift";
 
     LiftComplaint(int submissionId, int submissionCustomerId, String submissionText, String liftName, int liftFloor, Date submissionDate) {
 
@@ -9,5 +10,13 @@ public class LiftComplaint extends Complaint {
 
         this.liftName = liftName;
         this.liftFloor = liftFloor;
+    }
+
+    public String getLiftName() {
+        return liftName;
+    }
+
+    public int getLiftFloor() {
+        return liftFloor;
     }
 }

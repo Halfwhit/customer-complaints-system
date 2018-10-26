@@ -5,6 +5,7 @@ public abstract class Submission {
     String submissionText;
     Date submissionDate;
     boolean assigned;
+    String type;
 
     Submission(int submissionId, int submissionCustomerId, String submissionText, Date submissionDate) {
 
@@ -32,8 +33,20 @@ public abstract class Submission {
 
     abstract public boolean isAssigned();
 
+    public String getType() {
+
+        return type;
+    }
+
+    abstract public int getStaffId();
+
+    abstract public String getLiftName();
+
+    abstract public int getLiftFloor();
+
     @Override
     public String toString() {
-        return new String("SUBMISSION ID: " + submissionId + " : " + submissionText + "\nMade by: " + submissionCustomerId + " on the " + submissionDate + "\n");
+
+        return new String(getType());
     }
 }

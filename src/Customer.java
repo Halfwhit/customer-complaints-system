@@ -29,4 +29,12 @@ public class Customer {
     public String getCustomerPhone() {
         return customerPhone;
     }
+
+    @Override
+    public String toString() {
+        return new String("CUSTOMER NAME: " +getCustomerName()
+                                + "CUSTOMER ADDRESS: " +getCustomerAddress()
+                                + "CUSTOMER EMAIL: " +getCustomerEmail()
+                                + "CUSTOMER PHONE: " +getCustomerPhone());
+    }
 }
